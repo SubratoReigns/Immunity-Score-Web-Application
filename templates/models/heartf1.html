@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block title %}Heart Disease form test{% endblock title %}
+{% block body %}
+
+{% if pat_info %}
+<div class="container"><br>
+<form action="resultn1" method="post">
+
+<fieldset>
+		<legend>Heart Disease Test Form</legend><br>
+<div class="card card-body">
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Age</label>
+			{{form.age}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Anaemia</label>
+			{{form.anaemia}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Creatinine_Phosphokinase</label>
+			{{form.crePhos}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Diabetes</label>
+			{{form.diab}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Ejection_Fraction</label>
+			{{form.ejecFrac}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">High_Blood_Pressure</label>
+			{{form.highbp}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Platelets_Count</label>
+			{{form.platecount}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Serum_Creatinine</label>
+			{{form.serumcre}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Serum_Sodium</label>
+			{{form.serumsod}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Sex</label>
+			{{form.sex}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Smoking</label>
+			{{form.smoke}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Time</label>
+			{{form.time}}
+		</div>
+	
+	</div>
+	  <br>
+	    <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					  </div>
+					  <!--Prediction Result-->
+					  <div id ="result0">
+							<strong style="color:red"></strong>
+					 </div>
+					 <br>
+					  Result: {{result3}}
+				     </div>
+			 </fieldset>
+			 {% csrf_token %}
+</form>
+</div>
+{% else %}
+<div class="container"><br>
+<form action="resultn1" method="post">
+
+<fieldset>
+		<legend>Heart Disease Test Form</legend><br>
+<div class="card card-body">
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Age</label>
+			{{form.age}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Anaemia</label>
+			{{form.anaemia}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Creatinine_Phosphokinase</label>
+			{{form.crePhos}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Diabetes</label>
+			{{form.diab}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Ejection_Fraction</label>
+			{{form.ejecFrac}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">High_Blood_Pressure</label>
+			{{form.highbp}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Platelets_Count</label>
+			{{form.platecount}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Serum_Creatinine</label>
+			{{form.serumcre}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Serum_Sodium</label>
+			{{form.serumsod}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Sex</label>
+			{{form.sex}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Smoking</label>
+			{{form.smoke}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Time</label>
+			{{form.time}}
+		</div>
+	
+	</div>
+	  <br>
+	    <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					  </div>
+					  <!--Prediction Result-->
+					  <div id ="result0">
+							<strong style="color:red"></strong>
+					 </div>
+					 <br>
+					  Result: {{result3}}
+					  <br>
+					  Immunity Score(Out of 100.00) :{{Immunity_Score}}
+				     </div>
+			 </fieldset>
+			 {% csrf_token %}
+</form>
+</div>    
+{% endif %}
+{% endblock body %}

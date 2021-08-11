@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+			<a class="navbar-brand" href="/">Immunescora</a>
+			</div>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "result1">
+			{% csrf_token %}
+				<fieldset>
+				<legend>Heart Disease Test Form</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="n1" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Anaemia</label>
+							<input type="number" class="form-control" id="age" name="n2" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Creatinine_Phosphokinase</label>
+							<input type="number" class="form-control" id="age" name="n3" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Diabetes</label>
+							<input type="number" class="form-control" id="age" name="n4" required>
+						</div>
+						
+					  </div>
+					  <br>
+
+                      <div class="form-group  row">
+						<div class="col-sm">
+							<label for="age">Ejection_Fraction</label>
+							<input type="number" class="form-control" id="age" name="n5" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">High_Blood_Pressure</label>
+							<input type="number" class="form-control" id="age" name="n6" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Platelets Count</label>
+							<input type="number" class="form-control" id="age" name="n7" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Serum_Creatinine</label>
+							<input type="number" class="form-control" id="age" step="0.1" name="n8" required>
+						</div>
+						
+					  </div>
+					  <br>
+
+                      <div class="form-group  row">
+						<div class="col-sm">
+							<label for="age">Serum_Sodium</label>
+							<input type="number" class="form-control" id="age" name="n9" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Sex</label>
+							<input type="number" class="form-control" id="age" name="n10" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Smoking</label>
+							<input type="number" class="form-control" id="age" name="n11" required>
+						</div>
+                        <div class="col-sm">
+							<label for="age">Time</label>
+							<input type="number" class="form-control" id="age" name="n12" required>
+						</div>
+						
+					  </div>
+					  <br>
+                      <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					  </div>
+					  <!--Prediction Result-->
+					  <div id ="result0">
+							<strong style="color:red"></strong>
+					 </div>
+					 <br>
+					  Result: {{result3}}
+				     </div>
+			 </fieldset>
+			 
+			</form>
+			
+		</div>
+		
+</body>
+</html>

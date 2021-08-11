@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block title %}Diabetes Disease form test{% endblock title %}
+{% block body %}
+
+{% if pat_info1 %}
+<div class="container"><br>
+<form action="result" method="post">
+
+<fieldset>
+		<legend>Diabetes Disease Test Form</legend><br>
+<div class="card card-body">
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Pregnancies</label>
+			{{form.preg}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Glucose</label>
+			{{form.gluc}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Blood Pressure</label>
+			{{form.bp}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Skin Thickness</label>
+			{{form.skinthick}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Insulin</label>
+			{{form.insul}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Body Mass Index</label>
+			{{form.bmi}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Diabetes Pedigree Function</label>
+			{{form.diabpedfun}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Age</label>
+			{{form.age}}
+		</div>
+
+	
+	</div>
+	  <br>
+	    <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					  </div>
+					  <!--Prediction Result-->
+					  <div id ="result0">
+							<strong style="color:red"></strong>
+					 </div>
+					 <br>
+					  Result: {{result2}}
+					  <br>
+					  Immunity Score(Out of 100.00) :{{Immunity_Score}}
+				     </div>
+			 </fieldset>
+			 {% csrf_token %}
+</form>
+</div>
+{% else %}
+<div class="container"><br>
+<form action="result" method="post">
+
+<fieldset>
+		<legend>Diabetes Disease Test Form</legend><br>
+<div class="card card-body">
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Pregnancies</label>
+			{{form.preg}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Glucose</label>
+			{{form.gluc}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Blood Pressure</label>
+			{{form.bp}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Skin Thickness</label>
+			{{form.skinthick}}
+		</div>
+	
+	</div>
+	<br>
+	<div class="form-group row">
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Insulin</label>
+			{{form.insul}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Body Mass Index</label>
+			{{form.bmi}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Diabetes Pedigree Function</label>
+			{{form.diabpedfun}}
+		</div>
+		<div class="col-sm">
+			<label for="{{form.age.id_for_label}}">Age</label>
+			{{form.age}}
+		</div>
+
+	
+	</div>
+	  <br>
+	    <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Submit">
+					  </div>
+					  <!--Prediction Result-->
+					  <div id ="result0">
+							<strong style="color:red"></strong>
+					 </div>
+					 <br>
+					  Result: {{result3}}
+					  <br>
+					  Immunity Score(Out of 100.0) :{{Immunity_Score}}
+				     </div>
+			 </fieldset>
+			 {% csrf_token %}
+</form>
+</div>
+{% endif %}
+{% endblock body %}
